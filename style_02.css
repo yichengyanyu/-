@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none ;
+}
+h3{
+	width: 200px;
+	height: 600px;
+	background-color: deepskyblue; 
+	display: inline-block; 
+	float: left;
+	margin-right: 20px;
+	text-align: center;
+	padding-top:20px ;
+}
+h5{
+	font-size: 16px;
+}
+body{   
+	margin: 50px;
+}
+.box{
+	margin: 10px;
+	padding-top: 6px;
+	overflow: hidden;
+}
+
+.fu p{
+	float: left;
+}
+.box p{
+	margin: 9px;
+}
+.box div p:nth-child(2){
+	font-weight:400;
+	font-size: 15px ;
+	color: #333333;
+}

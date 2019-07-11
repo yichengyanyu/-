@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none ;
+}
+h5{
+	font-size: 16px;
+}
+body{
+	margin: 50px;
+}
+.box{
+	padding: 10px ;
+}
+.fu{
+	overflow: hidden;
+}
+.fu p{
+	float: left;
+}
+.box p:nth-child(1){
+	margin: 6px;
+}
+.box div p:nth-child(2){
+	font-weight:400;
+	font-size: 15px ;
+	color: #333333;
+	margin: 6px;
+}

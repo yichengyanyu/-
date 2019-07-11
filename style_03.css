@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none ;
+}
+h3{
+	height: 60px;
+	background-color: #bbb;
+	line-height: 60px;
+	padding-left: 20px;
+}
+h5{
+	font-size: 16px;
+	background-color: #ccc;
+	width:100px;
+	height: 100px;
+	border-radius:0 0 5px  5px;
+	line-height: 100px;
+	text-align: center;
+	display: inline-block;
+	float: left;
+}
+body{   
+	margin: 50px;
+}
+.box{
+	overflow: hidden;
+	display:block;
+	border: 1px solid #bbb;
+}
+.ao{
+	display: block;
+}
+.co{
+	overflow: hidden;
+}
+.fu p{
+	float: left;
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	margin: 4px;
+}
+.box p:nth-child(1){
+	margin: 4px;
+}
+.box div p:nth-child(2){
+	font-weight:400;
+	font-size: 15px ;
+	color: #333333;
+}
+.box:nth-child(5) .bo:nth-child(3){
+	/* width: 1000px; */
+	clear: both;
+}
