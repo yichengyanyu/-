@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复杂页面</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            width: 1580px;
+            height: 1020px;
+            background-color: #eee;
+            margin: 0 auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*左侧菜单栏*/
+        .base{
+            width: 100px;
+            height: 1020px;
+            background-color: #1d2531;
+            display: inline-block;
+            position: relative;
+            float: left;
+        }
+        div a div{
+            width: 60px;
+            height: 60px;
+            display: block;
+            background-color:red;
+            border-radius: 50%;
+            text-align: center;
+            margin: 20px;
+        }
+        .item_1{
+            background: url("images/Base(3).png")
+                        no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+        .item_2{
+            background: url("images/Base(4).png")
+            no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+        .item_3{
+            background: url("images/Base(5).png")
+            no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .item_4{
+            border: 2px solid rgba(45,56,72,1);
+            background-color: #1d2531;
+        }
+        .item_5{
+             width: 16px;
+             height: 16px;
+             background-color: #1d2531;
+             position: absolute;
+            bottom: 20px;
+            left: 26px;
+            margin: 0;
+            overflow: hidden;
+         }
+        .item_6{
+            width: 16px;
+            height: 16px;
+            background-color: #1d2531;
+            position: absolute;
+            bottom: 20px;
+            left: 58px;
+            float: left;
+            margin: 0;
+        }
+
+        .item_1 img{
+            margin: 20px;
+        }
+        .item_2 img{
+            margin: 13px  18px;
+        }
+        .item_3 img{
+            margin: 18px  14px;
+        }
+        .item_4 img{
+            margin: 20px  19px;
+        }
+        .item_5 img{
+            width: 16px;
+            height: 16px;
+        }
+        /*左侧菜单栏*/
+        /*左侧小菜单栏*/
+        .base_2{
+            width: 220px;
+            height: 1020px;
+            background-color: #222C3C;
+            float: left;
+            padding-left: 30px;
+            color: white;
+            position: relative;
+        }
+        .base_2 div{
+            margin: 34px 0;
+        }
+        .base_2  p,ul li{
+            margin-bottom:24px ;
+        }
+        .base_21 ul li:nth-child(1){
+            margin: 0;
+        }
+        .base_2 ul li{
+            margin: 24px 0;
+        }
+        .base_2  p{
+            width:155px;
+            height:20px;
+            font-size:12px;
+            font-family:ProximaNova-Semibold;
+            font-weight:600;
+            color:rgba(91,103,121,1);
+            overflow: hidden;
+        }
+        .base_2 div ul a{
+            width: 200px;
+            font-size:14px;
+            font-family:ProximaNova-Semibold;
+            font-weight:600;
+            color:rgba(183,192,205,1);
+        }
+        .base_21{
+            position: relative;
+        }
+        .base_21 .setting ,.base_21 p{
+            float: left;
+        }
+        .base_21 a img{
+            position: absolute;
+            right: 30px;
+        }
+        .base_21 ul span{
+            width: 32px;
+            height: 24px;
+            background: url("images/Base@2x.png")
+                        no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            display: inline-block;
+            text-align: center;
+            line-height: 24px;
+            position: absolute;
+            right:30px;
+            font-size: 14px;
+        }
+        .xian{
+            width: 190px;
+            height: 1px;
+            background-color: #2A3547;
+            display: block;
+        }
+        .xian_2{
+            width: 190px;
+            height: 1px;
+            background-color: #2A3547;
+            display: block;
+        }
+        .base_22 p, .setting{
+            float: left;
+            padding-right: 30px;
+            overflow: hidden;;
+        }
+        .base_22 ul li:nth-child(1){
+          text-align: left;
+            width: 100px;
+        }
+        .base_22 .setting img{
+            position: absolute;
+            right: 30px;
+        }
+        .base_23 p, .base_23 .setting{
+            float: left;
+            padding-right: 30px;
+            overflow: hidden;
+        }
+        .base_23 .setting img{
+            position: absolute;
+            right: 30px;
+        }
+        #twoone{
+            width: 32px;
+            height: 24px;
+            background:url("images/Base@2x.png") no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            text-align: center;
+            position: absolute;
+            right: 30px;
+            display: inline-block;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        #wa{
+            width: 24px;
+            height: 24px;
+            background:url("images/Base@2x(1).png") no-repeat;
+            text-align: center;
+            position: absolute;
+            right: 30px;
+            display: inline-block;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        #di{
+            position: absolute;
+            bottom: 24px;
+            margin: 0;
+        }
+        .base_24 p{
+            display: inline-block;
+            margin: 0;
+            width: 107px;
+        }
+        #xu{
+            width:190px;
+            height:4px;
+            background:rgba(71,83,100,0.3);
+            display: block;
+            position: relative;
+            margin-top: 14px;
+        }
+        #xu img{
+            position: absolute;
+        }
+        /*左侧小菜单栏*/
+        /*messages*/
+        .messages{
+            width: 1230px;
+            height: 78px;
+            float: right;
+            line-height: 70px;
+            background-color: #fff;
+            box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+            border-bottom: solid 1px #E6E9EC;
+            position: relative;
+        }
+        .messages .title{
+            margin-left: 30px;
+            font-size: 24px;
+            color: #354052;
+        }
+        .messages .user{
+            position: absolute;
+            top: 0;
+            right: 36px;
+            overflow: hidden;
+        }
+        .messages .user #man, .messages .user #username,.messages .user img{
+            float: right;
+        }
+        .messages .user #username p {
+            width:76px;
+            height:12px;
+            font-size:16px;
+            font-family:ProximaNova-Semibold;
+            font-weight:600;
+            color:rgba(35,153,241,1);
+            margin: 0 40px 10px 16px;
+            line-height: 32px;
+        }
+        .messages .user #username p:nth-child(2){
+            font-size: 14px;
+            color:rgba(181,181,181,1);
+        }
+        .messages .user span img{
+            margin: 10px;
+        }
+        .messages .user  #quan img{
+            margin:-14px -4px 0 0 ;
+            border: 3px solid #fff;
+            background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        /*messages*/
+        /*联系人*/
+        .base_3{
+            width: 398px;
+            height: 940px;
+            background-color: #fff;
+            float: left;
+            border-right:1px solid #E6E9EC;
+            overflow: hidden;
+        }
+        .search{
+            width: 400px;
+            height: 70px;
+            position: relative;
+        }
+        .person{
+            height: 133px;
+            border: #E6E9EC 1px solid;
+            padding-left: 30px;
+            margin: -1px 0;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 14px;
+            position: relative;
+            font-family:ProximaNova-Regular;
+        }
+        .person_inner{
+            width: 310px;
+            height: 90px;
+        }
+        .search input{
+            width:340px;
+            height: 36px;
+            border:1px solid rgba(229, 232, 238, 1);
+            border-radius:4px;
+            margin: 16px 30px;
+        }
+        .search img{
+            position: absolute;
+            right: 44px;
+            top: 26px;
+        }
+        .person div,.headicon{
+            float: left;
+
+        }
+        .headicon{
+            margin:12px 22px 10px 0 ;
+        }
+        .yuan{
+            width: 8px;
+            height: 8px;
+            background-color: #00AAFF;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 4px 0px 0px;
+        }
+        .name{
+            font-size:16px;
+            font-family:ProximaNova-Semibold;
+            font-weight:600;
+            color:rgba(88,93,104,1);
+            margin: 16px 0;
+        }
+        #person_1 .name{
+            color:rgba(35,153,241,1);
+        }
+        .pingtai{
+            color: #B5B5B5;
+            position: absolute;
+            top: 40px;
+            left: 96px;
+        }
+        .speak{
+            width:308px;
+            height:42px;
+            font-family:ProximaNova-Regular;
+            font-weight:400;
+            color:rgba(88,93,104,1);
+            line-height:20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .time{
+            color:#7F8FA4;
+            position: absolute;
+            right: 22px;
+            top: 20px;
+        }
+        #tishi{
+            width: 24px;
+            height: 24px;
+            background: url("images/Base@2x(6).png") no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            display: block;
+            position: absolute;
+            text-align: center;
+            line-height: 24px;
+            top:78px;right: 20px;
+            color:#fff;
+        }
+        /*联系人*/
+        /*动态*/
+        .base_4{
+            width: 830px;
+            height: 940px;
+            background-color: #fff;
+            float: right;
+            overflow: hidden;
+            position: relative;
+        }
+        header{
+            width: 830px;
+            height: 70px;
+            background-color: #fff;
+            line-height: 70px;
+            padding-left: 30px;
+            color: #585D68;
+            font-weight:600;
+            border-bottom: 1px solid #E6E9EC;
+        }
+        .talk{
+            /*width: 830px;*/
+            font-size: 14px;
+            margin: 20px 58px 10px 30px ;
+            position: relative;
+        }
+        .base_4 .name{
+            margin-bottom: 10px;
+            display: inline-block;
+            margin:  0 0 10px 0;
+            font-size: 16px;
+            color: #585D68;
+        }
+        .base_4 .times{
+            display: inline-block;
+            margin-left: 10px;
+            color: #7F8FA4;
+        }
+        .base_4 .yuan{
+            width:8px;
+            height:8px;
+            background:rgba(27,185,52,1);
+            border-radius:50%;
+            margin-right: 10px;
+        }
+        .base_4 .headicon{
+            margin: 0 20px 0 0 ;
+        }
+        .talkword{
+            width: 678px;
+            margin-left:70px;
+            /*text-align-last:justify;*/
+            text-align:justify;
+            /*text-justify:distribute-all-lines;*/
+            font-weight:400;
+            color:rgba(88,93,104,1);
+        }
+        .base_4 hr{
+            color: #E6E9EC;
+        }
+         .base_4 center{
+            color: #585D68;
+            margin: -22px 300px;
+            height: 40px;
+            background-color: #fff;
+            line-height: 40px;
+        }
+         #linglan{
+             width: 830px;
+             height: 1px;
+             background-color: #2399F1;display: block;
+         }
+        #mess{
+            color: #2399F1;
+        }
+        .base_4 .tu img{
+            width: 156px;
+            height: 100px;
+            display: inline-block;
+            margin:8px 14px 10px 0;
+        }
+        .base_4 input{
+            width: 720px;
+            height: 44px;
+            border: 1px solid #2399f1;
+            margin: 0 30px;
+            padding-left: 30px;
+        }
+        .base_4 #add {
+            width: 44px;
+            height: 44px;
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+            line-height: 49px;
+            border: 1px solid #2399F1;
+            position: absolute;
+            left: 30px;
+        }
+        .sananniu{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .anniu1,.anniu2,.anniu3{
+            float: left;
+            margin:0 10px;
+        }
+        .anniu3{
+            margin-right: 50px;
+        }
+        /*动态*/
+
+    </style>    
+</head>
+<body>
+    <!--左侧菜单栏-->
+    <div class="base">
+        <a href="#">
+            <div class="item_1">
+                <img src="images/Item 1@2x.png" alt=""/>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item_2">
+                <img src="images/Item 2@2x.png" alt=""/>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item_3">
+                <img src="images/Item 3@2x.png" alt=""/>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item_4">
+                <img src="images/Plus Icon@2x.png" alt=""/>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item_5">
+                <img src="images/Plus Icon@2x.png" alt=""/>
+            </div>
+        </a>
+        <a href="#">
+            <div class="item_6">
+                <img src="images/Settings@2x.png" alt=""/>
+            </div>
+        </a>
+    </div>
+    <!--左侧菜单栏-->
+    <!--左侧小菜单栏-->
+    <div class="base_2">
+        <div class="base_21">
+             <p>MENU</p>
+             <span class="setting">
+                 <a href="#"><img src="images/Settings@2x.png" alt=""/></a>
+             </span>
+            <ul>
+                <li><a href="#">Overview</a></li>
+                <li>
+                    <a href="#">Sales</a>
+                    <span>
+                        54
+                    </span>
+                </li>
+                <li><a href="#">Your Staff</a></li>
+                <li><a href="#">Analy & Tangeting</a></li>
+                <li><a href="#">What's New</a></li>
+            </ul>
+        </div>
+        <span class="xian"></span>
+        <div class="base_22">
+            <p>YOUR PRODUCTS</p>
+            <span class="setting">
+                <a href="#"><img src="images/Settings@2x.png" alt=""/></a>
+             </span>
+            <ul>
+                <li><a href="#">
+                    <img src="images/Book%20of%20Wisdom@2x.png" alt=""/> Books</a></li>
+                <li><a href="#">
+                    <img src="images/Video%20Camera@2x.png" alt=""/>
+                    Tutorials
+                </a></li>
+                <li><a href="#">
+                    <img src="images/Painting@2x.png" alt=""/>
+                    Stocks
+                </a></li>
+                <li><a href="#">
+                    <img src="images/Chart@2x.png" alt=""/>
+                    Infographics
+                </a></li>
+            </ul>
+        </div>
+        <span class="xian_2"></span>
+        <div class="base_23">
+            <p>DASHBOARD</p>
+            <span class="setting">
+                 <a href="#"><img src="images/Settings@2x.png" alt=""/></a>
+             </span>
+            <ul>
+                <li>
+                    <a href="#">Messages</a><span id="twoone">21</span>
+                </li>
+                <li><a href="#">Connetionsns</a></li>
+                <li>
+                    <a href="#">intergrations</a><span id="wa">!</span>
+                </li>
+                <li><a href="#">Account Settings</a></li>
+                <li><a href="#">App Settings</a></li>
+            </ul>
+        </div>
+        <div class="base_24" id="di">
+            <p>
+                Monthly Goals
+            </p>
+
+            <p>
+                <span>$580</span> <span>/$3200</span>
+            </p>
+            <span id="xu">
+                <img src="images/Fill@2x.png" alt=""/>
+            </span>
+        </div>
+    </div>
+    <!--左侧小菜单栏-->
+    <!--messages-->
+    <div class="messages">
+        <div class="title">Messages</div>
+        <div class="user">
+            <span>
+                <img src="images/dropdown@2x.png" alt=""/>
+            </span>
+            <div id="username">
+                <p>Jordan J.</p>
+                <p>Administrator</p>
+            </div>
+            <div id="man">
+                <img src="images/组 7 拷贝@2x.png" alt=""/>
+                <div id="quan">
+                    <img src="images/Status@2x.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--messages-->
+    <!-- /*联系人*/-->
+    <div class="base_3">
+        <div class="search">
+            <input type="text" placeholder=" &nbsp;&nbsp;&nbsp;&nbsp;Search"/>
+            <a href="#">
+                <img src="images/search.png" alt=""/>
+            </a>
+        </div>
+        <div id="person_1" class="person">
+            <div class="lanbian"></div>
+            <div class="person_inner">
+            <span class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </span>
+            <div class="name"><span class="yuan"></span>Bessie Berry</div>
+            <div class="pingtai">Twitter</div>
+            <div class="time">3m</div>
+            <div class="speak">
+                I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable...
+            </div>
+                <span id="tishi">4</span>
+            </div>
+        </div>
+        <div id="person_2" class="person">
+            <span class="headicon">
+                <img src="images/组 3 拷贝@2x.png" alt=""/>
+            </span>
+            <div class="name">Victor Weber</div>
+            <div class="pingtai">Adobe</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                I shared this on my fb wall a few months back, and I thought I'd share it here again because it's such a great... </div>
+        </div>
+        <div id="person_3" class="person">
+            <span class="headicon">
+                <img src="images/组 4 拷贝@2x.png" alt=""/>
+            </span>
+            <div class="name">Dustin Benson</div>
+            <div class="pingtai">Facebook</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                If there is anyone who needs an invitation please add yourself in the comments of this post!
+            </div>
+        </div>
+        <div id="person_4" class="person">
+            <span class="headicon">
+                <img src="images/组 5 拷贝@2x.png" alt=""/>
+            </span>
+            <div class="name">Jack Mason</div>
+            <div class="pingtai">Yahoo</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                BruteDC is a peer-to-peer movie+tv series sharing and downloading platform which works on intranet inside...
+            </div>
+        </div>
+        <div id="person_5" class="person">
+            <span class="headicon">
+                <img src="images/组 2@2x.png" alt=""/>
+            </span>
+            <div class="name">Stephen Shelton</div>
+            <div class="pingtai">Snapchat</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                Yes, p2p traffic is often filtered (QoSed). Although i do use BT on O2 wires, and in good days dl speed...
+            </div>
+        </div>
+        <div id="person_6" class="person">
+            <span class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </span>
+            <div class="name">Sally Willis</div>
+            <div class="pingtai">Twitter</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                Yes, it's O2: 'internet extreme', which is no longer offered.
+            </div>
+        </div>
+        <div id="person_7" class="person">
+            <span class="headicon">
+                <img src="images/组 7 拷贝@2x.png" alt=""/>
+            </span>
+            <div class="name">Robert Patton</div>
+            <div class="pingtai">A team</div>
+            <div class="time">8m</div>
+            <div class="speak">
+                I change my service from this 4Mb plan to their much cheaper 8Mb plan, my speed will dramatically decrease.
+            </div>
+        </div>
+    </div>
+    <!-- /*联系人*/-->
+    <!--动态-->
+    <div class="base_4">
+        <header>
+            Bessie Berry
+            <div class="yuan"></div>
+            <div class="sananniu">
+                <div class="anniu1">
+                    <img src="images/User%20icon@2x.png" alt=""/>
+                    <img src="images/Upload icon@2x.png" alt=""/>
+                    <img src="images/Trash icon@2x.png" alt=""/>
+                </div>
+                <div class="anniu2">1 of 28</div>
+                <div class="anniu3">
+                    <img src="images/Arrow%20left@2x.png" alt=""/>
+                    <img src="images/Arrow%20left@2x.png" alt=""/>
+                </div>
+            </div>
+        </header>
+
+        <div id="talkone" class="talk">
+
+            <div class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </div>
+            <div class="name">Bessie Berry</div>
+            <div class="times">8:31 AM</div>
+            <div class="talkword">
+                    Hi guys Ive got the O2 package and have really slow internet. A speed check online said i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages to open pages and open audio files for example. I have decided to switch to the UPC package which offers 10mbps but do you think i will get it?
+            </div>
+        </div>
+        <div id="talktwo" class="talk">
+
+            <div class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </div>
+            <div class="name">Jordan Jackson</div>
+            <div class="times">8:31 AM</div>
+            <div class="talkword">
+                I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s as it is filtered by O2 when it detect traffic on public p2p sharing in my situation all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading from p2p public servers like torrent emule etc. I downoad with 500KB/s from private trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds of test in Italy and Sweden and Romania with the same file to doanload with the same setting and same antivirus and just needed to open ports in firewall and forward same ports and the speed was at full capacity in 1 minute. here in 9 month never had this luck.
+            </div>
+        </div>
+        <hr/>
+        <center>Tuesday</center>
+        <div id="talkthree" class="talk">
+
+            <div class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </div>
+            <div class="name">Bessie Berry</div>
+            <div class="times">8:31 AM</div>
+            <div class="talkword">
+                Funny comparison. so would the proper antivirus not slow down the internet as much or do you mean a freebie doenst protect the computer from viruses?
+            </div>
+
+        </div>
+        <div id="talkfour" class="talk">
+
+            <div class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </div>
+            <div class="name">Bessie Berry</div>
+            <div class="times">8:31 AM</div>
+            <div class="talkword">
+                I pay for the 4Mb/sec down, 512 Kb/sec up service from O2, and haven't had any problems. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it. I max out at about 3 Mb/sec down, and 350 Kb/sec up. Probably because of a noisy telephone line, not because I'm being throttled. When my uploads go over 25 KB/sec (note, bytes, not bits), my download speed suffers. This is expected, as downloads require upload bandwidth as well.
+                <div class="tu">
+                    <img src="images/a888.jpg" alt=""/>
+                    <img src="images/a999.jpg" alt=""/>
+                </div>
+            </div>
+
+        </div>
+        <span id="linglan"></span>
+        <center id="mess">New Messages</center>
+        <div id="talkfive" class="talk">
+
+            <div class="headicon">
+                <img src="images/组 6@2x.png" alt=""/>
+            </div>
+            <div class="name">Bessie Berry</div>
+            <div class="times">8:31 AM</div>
+            <div class="talkword">
+                I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick, and stable. It's not perfect, but I really don't have issues, as long as I keep track of what I'm doing on it.
+            </div>
+        </div>
+        <span id="add">
+            <img src="images/Add%20icon@2x.png" alt=""/>
+        </span>
+        <input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Well, kinda both :) but more of that second option, i`ve seen many systems infected and crawling with"/>
+    </div>
+    <!--动态-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--/*联系人*/-->
+    <!--/*动态*/-->
+
+    <!--/*动态*/-->
+</body>
+</html>
