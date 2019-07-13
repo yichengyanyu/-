@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人简历</title>
+    <style type="text/css">
+        body{margin: 40px auto;text-align: center;
+            background-color:#DFF1CE;
+        }
+        div{margin: 20px auto;
+            color: #111;}
+        #border{border: 1px solid green;width: 500px;background: url( ../img/1.jpg);}
+    </style>
+</head>
+<body>
+<div id="border">
+
+
+    <h1>李开放</h1>
+    <div class="age">22岁大龄狗子<br><br>生于1997年10月1日（生的伟大）</div>
+    <div class="home">山东济宁汶上县</div>
+    <div class="like">爱游戏爱运动</div>
+    <div class="say">一个人想成为什么样的人，看他自己</div>
+    <div class="qq">QQ:1808929222（欢迎骚扰）</div>
+
+    <p id="like"></p>
+    <button id="btn-1">我的爱好</button>
+
+    <script type="text/javascript">
+        document.getElementById("btn-1").onclick = function(){
+            document.getElementById("like").innerHTML = "跳舞 Rap 打篮球"
+        }
+
+
+    </script>
+
+</div>
+
+</body>
+</html>
