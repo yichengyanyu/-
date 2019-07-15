@@ -1,0 +1,201 @@
+<!--简历-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人简历</title>
+    <style type="text/css">
+        body{margin: 40px auto;text-align: center;
+            background-color:#DFF1CE;
+        }
+        div{margin: 20px auto;
+            color: #111;}
+        #border{border: 1px solid green;width: 500px;background: url( ../img/1.jpg);}
+    </style>
+</head>
+<body>
+<div id="border">
+
+    <div id="hello"></div>
+    <h1>李开放</h1>
+    <div class="age">22岁大龄狗子<br><br>生于1997年10月1日（生的伟大）</div>
+    <div class="home">山东济宁汶上县</div>
+    <div class="like">爱游戏爱运动</div>
+    <div class="say">一个人想成为什么样的人，看他自己</div>
+    <div class="qq">QQ:1808929222（欢迎骚扰）</div>
+
+    <p id="like"></p>
+    <button id="btn-1">我的爱好</button>
+
+    <script type="text/javascript">
+        document.getElementById("btn-1").onclick = function(){
+            document.getElementById("like").innerHTML = "跳舞 Rap 打篮球"
+        }
+        var hello =  document.getElementById('hello')
+        var myDate = new Date()
+        console.log(myDate.getHours())
+        var hours = myDate.getHours()
+        /*        1 myDate.getYear(); //获取当前年份(2位)
+         2 myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+         3 myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+         4 myDate.getDate(); //获取当前日(1-31)
+         5 myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+         6 myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+         7 myDate.getHours(); //获取当前小时数(0-23)
+         8 myDate.getMinutes(); //获取当前分钟数(0-59)
+         9 myDate.getSeconds(); //获取当前秒数(0-59)
+         10 myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+         11 myDate.toLocaleDateString(); //获取当前日期
+         12 var mytime=myDate.toLocaleTimeString(); //获取当前时间
+         13 myDate.toLocaleString( ); //获取日期与时间*/
+        if(hours<12){
+            hello.innerHTML = "早安"
+        }else if(12<hours<18){
+            hello.innerHTML = "午安"
+        }else{
+            hello.innerHTML = "晚安"
+        }
+    </script>
+
+</div>
+
+</body>
+</html>-->
+<!--99乘法表-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<script>
+for(var i=1;i<=9;i++){
+    for(var n=1;n<=i;n++){
+        document.write(
+                n + "x" + i +"="+i*n+" "
+        )
+    }
+    document.write("<br>"+"<br>")
+}
+</script>
+</body>
+</html>-->
+<!--输出1-100-->
+<!--<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    for(var i = 1;i<=100;i++) {
+//        i%3 === 0
+        if(i%3===0||i%10===3){
+            console.log("pa")
+        }else{
+            console.log(i)
+        }
+    }
+</script>
+</body>
+</html>-->
+<!--进制转化-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+<input id="in" type="number" placeholder="输入一个十进制非负整数">
+<input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+<button id="trans-btn">转化为二进制</button>
+<p id="result">运算结果</p>
+<script>
+    var a = document.getElementById('in')
+    var b = document.getElementById('trans-btn')
+    var result = document.getElementById('result')
+    var binBit = document.getElementById('bin-bit')
+    b.onclick =  function dec2bin() {
+        if(a.value>=0){
+            result.innerHTML = parseInt(a.value,2)
+        }else(
+                alert('请输入大于等于0的数字')
+        )
+        console.log(result.innerHTML)
+        if(){
+
+        }else{
+
+        }
+    }
+
+
+    // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+    // 新的需求是，转化显示后的二进制数为bin-bit中输入的数字宽度，例如
+    // dec-number为5，bin-bit为5，则转化后数字为00101
+    // 如果bin-bit小于转化后的二进制本身位数，则使用原本的位数，如dec-number为5，bin-bit为2，依然输出101，但同时在console中报个错
+    // Some coding
+
+</script>
+</body>
+</html>-->
+<!--加减乘除-->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+<input id="first-number" type="number" value="0" placeholder="第一个数字">
+<input id="second-number" type="number" value="0" placeholder="第二个数字">
+<button id="add-btn">加</button>
+<button id="minus-btn">减</button>
+<button id="times-btn">乘</button>
+<button id="divide-btn">除</button>
+<p id="result">运算结果</p>
+<script>
+    /*document.getElementById('add-btn').onclick = function () {
+        var x = document.getElementById('first-number').value
+        var y = document.getElementById('second-number').value
+
+        document.getElementById('result').innerHTML = parseInt(x)+parseInt(y)
+    }
+    document.getElementById('minus-btn').onclick = function () {
+        var x = document.getElementById('first-number').value
+        var y = document.getElementById('second-number').value
+        document.getElementById('result').innerHTML = parseInt(x)-parseInt(y)
+    }
+    document.getElementById('times-btn').onclick = function () {
+        var x = document.getElementById('first-number').value
+        var y = document.getElementById('second-number').value
+        document.getElementById('result').innerHTML = parseInt(x)*parseInt(y)
+    }
+    document.getElementById('divide-btn').onclick = function () {
+        var x = document.getElementById('first-number').value
+        var y = document.getElementById('second-number').value
+        document.getElementById('result').innerHTML = parseInt(x)/parseInt(y)
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>  加减乘除-->
