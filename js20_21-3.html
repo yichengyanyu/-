@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+    <style>
+        .palette {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .palette li {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+            cursor: pointer;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul class="palette">
+    <li style="background-color:crimson">1</li>
+    <li style="background-color:bisque">2</li>
+    <li style="background-color:blueviolet">3</li>
+    <li style="background-color:coral">4</li>
+    <li style="background-color:chartreuse">5</li>
+    <li style="background-color:darkolivegreen">6</li>
+    <li style="background-color:cyan">7</li>
+    <li style="background-color:#194738">8</li>
+</ul>
+
+<p class="color-picker"></p>
+
+<script>
+    var oul = document.getElementsByClassName('palette')
+    console.log(oul)
+    var oli = document.querySelectorAll("li")
+    console.log(oli)
+    oul.onclick = function(ev){
+        console.log("1")
+        var ev = ev || window.event
+        var target = ev.target || ev.srcElement
+        if(target.nodeName.toLowerCase() == 'li'){
+            alert("111")
+        }
+    }
+</script>
+</body>
+</html>

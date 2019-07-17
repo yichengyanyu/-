@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn" onclick="dianji()">Submit</button>
+    <script>
+        btn = document.querySelector('button')
+
+        function dianji(){
+            console.log(document.querySelector('#name').value)
+        }
+        onkeydown = function(event){
+            if(event.keyCode == 13)
+            {
+               dianji()
+            }
+        }
+        onkeydown = function(event){
+            if(event.keyCode == 27)
+            {
+                document.querySelector('#name').value = ""
+            }
+        }
+
+     /*   function keyDown() {
+
+            var value= event.keyCode
+
+            var key = String.fromCharCode(event.keyCode)
+
+            alert (" 键: " + key + "值: " + value )
+
+        }
+
+        document.onkeydown = keyDown*/
+
+    </script>
+</body>
+</html>
