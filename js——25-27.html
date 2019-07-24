@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS 动态时钟</title>
+</head>
+<body onload="clock()">
+    <p id="clock"></p>
+    <script>
+        function clock() {
+            //定义一个时钟函数
+            var d = new Date()
+            var data = d.getDate()
+            var y = d.getFullYear()
+            var day = d.getDay()
+            var mo = d.getMonth()+1
+            var h = d.getHours()
+            var m = d.getMinutes()
+            var s = d.getSeconds()
+            var p = "PM"
+
+            function zhou() {
+                while (day == 0) {
+                    day = "Sunday"
+                }
+                while (day == 1) {
+                    day = "Monday"
+                }
+                while (day == 2) {
+                    day = "Tuesday"
+                }
+                while (day == 3) {
+                    day = "Wednesday"
+                }
+                while (day == 4) {
+                    day = "Thursday"
+                }
+                while (day == 5) {
+                    day = "Friday"
+                }
+                while (day == 6) {
+                    day = "Saturday"
+                }
+                return day
+            }
+
+           zhou()
+                function wu() {
+                if (h < 12) {
+                    p = "AM"
+                } else {
+                    p = "PM"
+                }
+                return p
+            }
+
+            wu()
+            function jia() {
+                while (h < 10) {
+                    h = "0"+h
+                    return h
+                }
+
+                while (mo < 10) {
+                    mo = "0"+mo
+                    return mo
+                }
+
+                while (m < 10) {
+                    m = "0"+m
+                    return m
+                }
+
+                while (data<10) {
+                    data ="0"+data
+                    return data
+                }
+
+                while (s<10) {
+                    s ="0"+s
+                    return s
+                }
+
+            }
+                jia()
+                var hms = y+ "-"+ mo + "-"+ data+'-' + day + "<br/>"+h+ ':' + m + ":" + s +p
+                //动态赋值
+                document.getElementById('clock').innerHTML = hms
+
+                //设置定时执行
+                setTimeout('clock()',1000)
+        }
+    </script>
+</body>
+</html>

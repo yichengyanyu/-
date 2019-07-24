@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div>
+    <button>获取当前选中输入的内容长度</button>
+    <button>当前选中输入中的第3个字符</button>
+    <button>把两个输入框的文字连接在一起输出（concat）</button>
+    <button>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button>当前选中输入框的行数</button>
+    <button>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button>把所选输入框中的内容全部转为大写</button>
+    <button>把所选输入框中的内容全部转为小写</button>
+    <button>把所选输入框中内容的半角空格全部去除</button>
+    <button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+</body>
+<script>
+    var radA = document.getElementById('radio-a')
+    var strA = document.getElementById('str-a')
+    var radB = document.getElementById('radio-b')
+    var strB = document.getElementById('str-b')
+    var numA = document.getElementById('num-a')
+    var numB = document.getElementById('num-b')
+    var oDiv = document.querySelector("div")
+    var result = document.getElementById("result")
+/*    console.log(oDiv)
+    oDiv.onclick = function(ev){
+
+        var aaa = strA.value
+        var bbb = strB.value
+        console.log(aaa)
+        console.log(bbb)
+
+        var e = ev||window.event
+        var target = e.target|| e.srcElement
+        if(target.nodeName.toLowerCase()=="button"){
+            var arr = document.querySelectorAll("button")
+            switch (arr[0].onclick) {
+                case 1:
+                    function one(){
+                        if(radA.checked){
+                            result.innerHTML = aaa.length
+                        }else if(radB.checked){
+                            result.innerHTML = bbb.length
+                        }
+                        one()
+                    }
+            }
+        }
+    }*/
+    var arr = document.querySelectorAll('button')
+
+    arr[0].onclick=function changDu(){
+        var aaa = strA.value.length
+        var bbb = strB.value.length
+
+        if(radA.checked){
+            result.innerHTML = aaa
+        }else if(radB.checked){
+            result.innerHTML = bbb
+        }else{
+            alert('请选择所需测量内容的选择按钮')
+        }
+
+    }//--------------1获取当前选中输入的内容长度
+
+    arr[1].onclick = function diSan(){
+        var aaa = strA.value
+        var bbb = strB.value
+        if(radA.checked){
+            result.innerHTML = aaa[2]
+        }else if(radB.checked){
+            result.innerHTML = bbb[2]
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//--------------2当前选中输入中的第3个字符
+
+    arr[2].onclick = function yiQi(){
+        var aaa = strA.value
+        var bbb = strB.value
+        result.innerHTML = aaa+bbb
+    }//--------------3把两个输入框的文字连接在一起输出（concat）
+
+    arr[3].onclick = function chuJian(){
+        var aaa = strA.value
+        var bbb = strB.value
+        result.innerHTML = aaa.indexOf(bbb)+1
+    }//--------------4输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）
+
+    arr[4].onclick = function zuiHou(){
+        var aaa = strA.value
+        var bbb = strB.value
+        result.innerHTML = aaa.lastIndexOf(bbb)+1
+    }//--------------5输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）
+
+    arr[5].onclick = function buFen(){
+        var aaa = strA.value
+        var bbb = strB.value
+        var ccc = numA.value
+        var ddd = numB.value
+
+        if(radA.checked){
+            result.innerHTML = aaa.slice(ccc,ddd)
+        }else if(radB.checked){
+            result.innerHTML = bbb.slice(ccc,ddd)
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//-------------6使用slice获取选中输入框内容的部分内容，参数为num-a及num-b
+
+    arr[6].onclick = function hangSu(){
+
+        if(radA.checked){
+            result.innerHTML = strA.rows
+        }else if(radB.checked){
+            result.innerHTML = strB.rows
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//-------------7当前选中输入框的行数
+
+    arr[7].onclick = function ziZhi(){
+        var aaa = strA.value
+        var bbb = strB.value
+        var ccc = numA.value
+        var ddd = numB.value
+
+        if(radA.checked){
+            result.innerHTML = aaa.substring(ccc,ddd)
+        }else if(radB.checked){
+            result.innerHTML = bbb.substring(ccc,ddd)
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+
+    }//-------------8子字符串
+
+    arr[8].onclick = function daXie(){
+        var aaa = strA.value
+        var bbb = strB.value
+        if(radA.checked){
+            result.innerHTML = aaa.toUpperCase()
+        }else if(radB.checked){
+            result.innerHTML = bbb.toUpperCase()
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//--------------9大写
+
+    arr[9].onclick = function xiaoXie(){
+        var aaa = strA.value
+        var bbb = strB.value
+        if(radA.checked){
+            result.innerHTML = aaa.toLowerCase()
+        }else if(radB.checked){
+            result.innerHTML = bbb.toLowerCase()
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//--------------9小写
+
+    arr[10].onclick = function xiaoXie(){
+        var aaa = strA.value
+        var bbb = strB.value
+        if(radA.checked){
+            result.innerHTML = aaa.replace(/(^[' '|'　']*)/, "");
+        }else if(radB.checked){
+            result.innerHTML = bbb.replace(/(^[' '|'　']*)/, "");
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//--------------10把所选输入框中内容的半角空格全部去除
+
+    arr[11].onclick = function xiaoXie(){
+        var aaa = strA.value
+        var bbb = strB.value
+        if(radA.checked){
+            strA.value = bbb
+        }else if(radB.checked){
+            strB.value = aaa
+        }else{
+            alert('请选择所需选取内容的选择按钮')
+        }
+    }//--------------11把所选输入框中内容的a全部替换成另外一个输入框中的内容
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

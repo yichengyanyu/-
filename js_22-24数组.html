@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <input id="queue-input" type="text">
+            <p id="queue-cont">队列内容：apple-&gt;pear</p>
+            <button id="in-btn">入队</button>
+            <button id="out-btn">出队</button>
+            <button id="font-btn">打印队头元素内容</button>
+            <button id="empty-btn">判断队列是否为空</button>
+
+    <script>
+        /* var queue = ["apple", "pear"];
+        function getInput(){
+            var inPut = document.querySelector("#queue-input").value;
+            return inPut;
+        }
+        var cont = document.querySelector("#queue-cont");
+        var inBtn = document.querySelector("#in-btn");
+        var outBtn = document.querySelector("#out-btn");
+        var fontBtn = document.querySelector("#font-btn");
+        var emptyBtn = document.querySelector("#empty-btn");
+        inBtn.addEventListener("click",inbtn);
+        outBtn.addEventListener("click",outbtn);
+        fontBtn.addEventListener("click",fontbtn);
+        emptyBtn.addEventListener("click",emptybtn);
+        function inbtn(){
+            var a = getInput();
+            queue.push(a);
+            cont.innerHTML = "队列内容："+queue.join("->");
+        }
+        function outbtn(){
+            queue.shift();
+            cont.innerHTML = "队列内容："+queue.join("->");
+        }
+        function fontbtn(){
+            cont.innerHTML = "队列内容："+queue.join("->");
+            console.log(queue[queue.length-1]);
+        }
+        function emptybtn(){
+            if(queue.length == 0){
+                console.log("空");
+                cont.innerHTML = "队列内容："+"空";
+            }else{
+                console.log("不空");
+                cont.innerHTML = "队列内容："+"不为空";
+            }
+
+        }//--------------抄的*/
+        /*push:加入到队尾
+        * pop：删除
+        * shift：队列第一个
+        * unshift
+        *
+        * 方法                描叙
+        * enqueue       向队列末尾添加一个元素
+        * dequeue       删除队列首的元素
+        * front         读取队列首元素
+        * back          读取队列尾的元素
+        * tostring      显示队列所有的元素
+        * clear         清空当前队列
+        * empty         判断队列是否为空
+        *
+        *
+        function Queue(){
+            this.dataStore = []
+            this.enqueue = enqueue          //入队
+            this.dequeue = dequeue          //出队
+            this.front = front              //查看队首元素
+            this.back = back                //查看队尾元素
+            this.toString = toString        //显示队列所有元素
+            this.clear = clear              //清空当前元素
+            this.empty = empty              //判断当前队列是否为空
+         }
+         */
+
+        var queue = ["apple", "pear"];
+        function getInput(){
+            var input = document.querySelector('#queue-input').value
+            console.log(input)
+            return input
+        }
+        var cont = document.querySelector('#queue-cont')
+        var inBtn = document.querySelector('#in-btn')
+        var outBtn = document.querySelector('#out-btn')
+        var fontBtn = document.querySelector('#font-btn')
+        var emptyBtn = document.querySelector('#empty-btn')
+
+        inBtn.addEventListener('click',inbtn)
+        outBtn.addEventListener('click',outbtn)
+        fontBtn.addEventListener('click',fontbtn)
+        emptyBtn.addEventListener('click',emptybtn)
+
+        function inbtn(){
+            var a = getInput()
+            queue.push(a)
+            cont.innerHTML = "队列内容："+queue.join('->')
+        }
+        function outbtn(){
+            queue.shift()
+            cont.innerHTML = '队列内容'+queue.join('->')
+        }
+        function fontbtn(){
+            cont.innerHTML = '队列内容'+queue.join('->')
+            console.log(queue[queue.length-1])
+        }
+        function emptybtn(){
+            if(queue.length == 0){
+                console.log('空')
+                cont.innerHTML = '队列内容: '+'空'
+            }else{
+                console.log('不空')
+                cont.innerHTML = '队列内容: '+'不空'
+            }
+        }
+</script>
+</body>
+</html>

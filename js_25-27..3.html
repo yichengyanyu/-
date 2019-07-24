@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<span>当前时间：</span>
+<select id="year-select">
+
+</select>
+
+<select id="month-select">
+
+</select>
+
+<select id="day-select">
+
+</select>
+
+<select id="hour-select">
+
+</select>
+
+<select id="minite-select">
+
+</select>
+
+<select id="second-select">
+
+</select>
+<button id="now">NOW</button>
+<button id="stop">STOP</button>
+<button id="start">START</button>
+<p id="result-wrapper">现在距离
+    <span id="y1">2019</span>年
+    <span id="m1">7</span>月
+    <span id="d1">24</span>日
+    星期 <span id="day2">三</span>
+    <span id="h1">00</span> :
+    <span id="mi1">00</span> :
+    <span id="s1">00</span>
+    <span id="hai">还有</span>
+    <span id="day"></span>天
+    <span id="hour"></span>小时
+    <span id="min"></span>分
+    <span id="second"></span> 秒
+</p>
+<script>
+    /*使用上方的HTML结构（可以根据需要自行微调）为基础编写JavaScript代码
+    当变更任何一个select选择时，更新 result-wrapper 的内容
+    当所选时间早于现在时间时，文案为 现在距离 "所选时间" 已经过去 xxxx
+    当所选时间晚于现在时间时，文案为 现在距离 "所选时间" 还有 xxxx
+    注意当前时间经过所选时间时候的文案变化
+    注意选择不同月份的时候，日期的可选范围不一样，比如1月可以选31天，11月只有30天，注意闰年
+    同样，需要注意，通过优雅的函数封装，使得代码更加可读且可维护*/
+    var r = document.getElementById('result-wrapper')
+    var hai = document.getElementById('hai')
+    var now = document.getElementById('now')
+    var stop = document.getElementById('stop')
+    var start = document.getElementById('start')
+    start.style.display = "none"
+    //起始时间
+
+    var y = document.getElementById('year-select')
+    var m = document.getElementById('month-select')
+    var d = document.getElementById('day-select')
+    var h = document.getElementById('hour-select')
+    var mi = document.getElementById('minite-select')
+    var s = document.getElementById('second-select')
+    console.log(y,m,d,h,mi,s)
+    //终止时间
+    var y1 = document.getElementById('y1').innerHTML
+    var m1 = document.getElementById('m1').innerHTML
+    var d1 = document.getElementById('d1').innerHTML
+    var h1 = document.getElementById('h1').innerHTML
+    var mi1 = document.getElementById('mi1').innerHTML
+    var s1 = document.getElementById('s1').innerHTML
+    var day2 = document.getElementById('day2').innerHTML
+    console.log(y1,m1,d1,h1,mi1,s1,day2)
+    //时间差
+    var day = document.getElementById('day')
+    var hour = document.getElementById('hour')
+    var min = document.getElementById('min')
+    var second = document.getElementById('second')
+    console.log(day,hour,min,second)
+//      年
+    var yun = []
+    var ping = []
+    for(var i = 0;i<100;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML =  i+2000
+        y.appendChild(op)
+
+        y1 %4 == 0?yun.push(y1):ping.push(y1)
+        op.value %4 == 0?yun.push(op.value):ping.push(op.value)
+
+    }
+//      月
+    var sanShi = [4,6,9,11]//30天月份
+    var sanShi1 = [1,3,5,7,8,10,12]//31天月份
+    for(var i = 1;i<=12;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML = i
+        m.appendChild(op)
+    }
+//      日
+    for(var i = 1;i<=31;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML = i
+        d.appendChild(op)
+    }
+//      时
+    for(var i = 1;i<=24;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML = i
+        h.appendChild(op)
+    }
+//      分
+    for(var i = 0;i<60;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML = i
+        mi.appendChild(op)
+    }
+//      秒
+    for(var i = 0;i<60;i++){
+        var op = document.createElement("option")
+        op.value =op.innerHTML = i
+        s.appendChild(op)
+    }
+
+//now
+     function time(){
+        var n = new Date()
+        y.value = n.getFullYear()
+        m.value = n.getMonth()+1
+        d.value = n.getDate()
+        h.value = n.getHours()
+        mi.value = n.getMinutes()
+        s.value = n.getSeconds()
+        shiJianCha()
+    }
+//    计时
+    var jishi = setInterval(function(){
+        time()
+    },1000)
+    now.onclick = function(){
+        time()
+    }
+    stop.onclick = function(){
+        clearInterval(jishi)
+        start.style.display = "inline-block"
+        stop.style.display = "none"
+    }
+    start.onclick = function(){
+        var jishi1 = setInterval(function(){
+            time()
+        },1000)
+        start.style.display = "none"
+        stop.style.display = "inline-block"
+    }
+//时间差
+    function shiJianCha(){
+        //年
+        var y2  =y1 - y.value
+        var arr = []
+        for(var i=0;i<y2;i++){
+            console.log(i)
+            if(i%4 === 0){
+                arr.push(i)
+            }
+        }//闰年加一
+        var m2 = m1 - m.value
+        var ershiba = [] //28天
+        var sanshiyi = [] //31天
+        if(m2>0){//m小于31
+            for(var i = m.value;i<m2;i++){
+                if(i == 2 ){
+                    ershiba.push(i)
+                }else if(i==1||i==3||i==5||i==7||i==8||i==10||i==12)
+                {
+                    sanshiyi.push(i)
+                }
+            }
+        }else if(m2<0){
+            for(var i = m.value;i<=12;i++){
+                if(i == 2){
+                    ershiba.push(i)
+                }else if(i==1||i==3||i==5||i==7||i==8||i==10||i==12){
+                    sanshiyi.push(i)
+                }
+            }
+        }else{
+            var ershiba = []
+            var sanshiyi = []
+        }
+
+        //天数
+        day.innerHTML = (y1 - y.value)*365+arr.length+(m1- m.value)*30+(d1- d.value)+(sanshiyi.length)-(ershiba.length)*2
+        //小时
+        var hour1 = h1 - h.value
+        if(hour1>0){
+            hour.innerHTML = hour1/100
+        }else if(hour1<0){
+            hour.innerHTML = ((24- h.value)+h1)/100
+            day.innerHTML -= 1
+        }else{
+            hour.innerHTML = 0
+        }
+        //分钟
+        var minite1 = mi1 - mi.value
+        if(minite1>0){
+            min.innerHTML = minite1/100
+        }else if(minite1<0){
+            min.innerHTML = ((60-mi.value)+mi1)/100
+            hour.innerHTML -= 1
+        }else{
+            min.innerHTML = 0
+        }
+        //秒
+        var second1 = s1 - s.value
+        if(second1>0){
+            second.innerHTML = second1/100
+        }else if(second1<0){
+            second.innerHTML = ((60-s.value)+s1)/100
+            min -= 1
+        }else{
+            second.innerHTML = 0
+        }
+//        console.log(day,hour,min,second)
+        if(day.innerHTML<0||hour.innerHTML<0||min.innerHTML<0||second.innerHTML<0){
+            hai.innerHTML = '已过去'
+            day.innerHTML = -day.innerHTML
+        }
+    }
+    shiJianCha()
+    console.log(hai)
+    y.onclick = function(){
+        clearInterval(jishi)
+        shiJianCha()
+    }
+    m .onclick = function(){
+        clearInterval(jishi)
+        shiJianCha()
+    }
+    d.onclick = function(){
+        clearInterval(jishi)
+        shiJianCha()
+    }
+    h.onclick = function(){
+        clearInterval(jishi)
+        shiJianCha()
+    }
+    s.onclick = function(){
+        clearInterval(jishi)
+        shiJianCha()
+    }
+
+
+
+
+</script>
+</body>
+</html>

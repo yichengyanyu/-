@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<body>
+<script>
+    var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+    var a = arr.sort(function(a,b){
+        return a - b
+    })
+    console.log(a)
+    var b = arr.sort(function(a,b){
+        return b - a
+    })
+    console.log(b)
+    var arr1 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];     var a = arr1.sort()
+    var a = arr1.sort(function(a,b){
+        return 1
+    })
+    console.log(a)
+    var b = arr1.sort(function(a,b){
+        return -1
+    })
+    console.log(b)
+
+    var arr = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+    arr.sort(function(){
+
+    })
+
+    var arr = [
+        {
+            id: 1,
+            name: 'candy',
+            value: 40
+        }, {
+            id: 2,
+            name: 'Simon',
+            value: 50
+        }, {
+            id: 3,
+            name: 'Tony',
+            value: 45
+        }, {
+            id: 4,
+            name: 'Annie',
+            value: 60
+        }
+    ];
+    var a = arr.sort(function(a,b){
+       return ( a.value  -  b.value)
+    })
+    console.log(a)
+
+
+
+
+</script>
+</body>
+</html>
